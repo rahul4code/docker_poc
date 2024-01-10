@@ -1,5 +1,6 @@
 FROM node
 WORKDIR /app
-COPY . .
+COPY package.json package.json
 RUN npm install
-CMD ["node", "server.js"]
+COPY ./app ./app
+CMD ["node", "app/server.js"]
